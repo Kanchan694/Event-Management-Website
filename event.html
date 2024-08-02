@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Conference Page</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="event-styles.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Luxurious Event </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse"
+  data-target="#navbarNav" aria-controls="navbarNav"
+  aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+              <a class="nav-link" href="#details">Details</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#schedule">Management</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#speakers">Sound system</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#register">Booking</a>
+          </li>
+      </ul>
+  </div>
+</nav>
+
+<!---slideshow--->
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+</style>
+<body>
+
+<h2 style="text-align:center">Luxurious Event </h2>
+
+<div class="container">
+  <div class="mySlides">
+    <div class="numbertext">1 / 6</div>
+    <img src="l1.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 6</div>
+    <img src="l2.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+  <div class="mySlides">
+    <div class="numbertext">4 / 6</div>
+    <img src="l9.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 6</div>
+    <img src="l5.jpg" style="width:100%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">6 / 6</div>
+    <img src="l6.jpg" style="width:100%">
+  </div>
+    
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="l1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Follow The Culture">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="l2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Fancy Plus Traditional">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="l3.jpg" style="width:100%" onclick="currentSlide(3)" alt="A Gretting">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="l9.jpg" style="width:100%" onclick="currentSlide(4)" alt="Twinkling Lights">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="l5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Cool Enviornment">
+    </div>    
+    <div class="column">
+      <img class="demo cursor" src="l6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Touch With Culture">
+    </div>
+  </div>
+</div>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+    
+</body>
+</html>
+
+<!--slideshow-->
+
+
+
+<main>
+  <section id="details" class="py-5">
+      <div class="container">
+          <h2 class="text-center mb-3">Event Details</h2>
+
+
+
+		  <!-- Event details go here -->
+		  
+<head>
+<style>
+div.gallery {
+  border: 1px solid #ccc;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body>
+
+
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="des.jpg">
+      <img src="des.jpg" alt="Cinque Terre" width="600" height="400">
+    </a>
+    <div class="desc">Destination Wedding</div>
+  </div>
+</div>
+
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="tra.jpg">
+      <img src="tra.jpg" alt="Forest" width="600" height="400">
+    </a>
+    <div class="desc">Traditional Wedding</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="kre.jpg">
+      <img src="kre.jpg" alt="Northern Lights" width="600" height="400">
+    </a>
+    <div class="desc">Christain Wedding</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="mara.jpg">
+      <img src="mara.jpg" alt="Mountains" width="600" height="400">
+    </a>
+    <div class="desc">Marathi Wedding</div>
+  </div>
+</div>
+
+<div class="clearfix"></div>
+
+<div style="padding:6px;">
+</div>
+
+</body>
+</html>
+<!--event details-->
+		  <bold><h4>Planning your dream wedding is no mean feat, even if you've been bookmarking ideas since you first learned about Pinterest. Between a groom who'd rather leave all the decisions to you and that dream makeup artist whose dates don't match yours, it wouldn't be surprising if you found yourself slacking on some of the finer details of your celebrations, like the floral centrepiece on the dining tables at your reception, or the font on your monogrammed napkins. Take your cues from last year's celebrity brides—Priyanka Chopra Jonas, Deepika Padukone and Sonam K Ahuja, for starters—who not only managed to host Instagram-worthy celebrations for their respective big days, but also did it while keeping up with the many requirements of their hectic, media-led lives. Wondering how they did it? Simple: they just recruited the best in the business to worry about the nitty-gritty of their nuptials. Scroll ahead for Vogue India's round-up the country's best wedding planners, who can give you the festivities you've always dreamt off. we are arrenging all types of weddings</h4></bold>
+		  
+      </div>
+  </section>
+
+  <section id="schedule" class="py-5 bg-light">
+      <div class="container">
+          <h2 class="text-center mb-3">Event management</h2>
+          <!-- Schedule details go here -->
+		  
+		  <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+div.scroll-container {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 10px;
+}
+
+div.scroll-container img {
+  padding: 10px;
+}
+</style>
+</head>
+<body>
+
+<bold><h4>Our chefs ensure premium quality service by constantly innovating culinary delights. we create bespoke menus and experiences to meet your expectations at any location of your choice. Be it a private party or a large destination wedding catering across the world, we extend our luxury catering services to separate your event from the rest.We are dedicated in constantly raising the bar in terms of consistency, flavour and variety. With exquisite venues, artistic décor and finely crafted local, regional and International cuisines, we promise a premium experience that you and your guests will remember for a lifetime.</h4></bold>
+
+<div class="scroll-container">
+  <img src="cat.jpg" alt="Cinque Terre" width="600" height="400">
+  <img src="cat2.jpg" alt="Forest" width="600" height="400">
+  <img src="cat3.jpg" alt="Northern Lights" width="600" height="400">
+  <img src="cat4.jpg" alt="Mountains" width="600" height="400">
+  <img src="cat5.jpg" alt="Mountains" width="600" height="400">
+  <img src="cat6.jpg" alt="Mountains" width="600" height="400">
+  <img src="cat7.jpg" alt="Mountains" width="600" height="400">
+</div>
+
+
+</body>
+</html>
+<!---mangement-->
+<html>
+<head>
+<section id="schedule" class="py-5 bg-light">
+      <div class="container">
+          <h2 class="text-center mb-3">Sound System</h2>
+		        <img src="djs.jpg" alt="Cinque Terre" width="1000" height="600">
+
+</sectiion>
+<title>sound</title>
+</head>
+<body>
+
+
+<h4>Weddings have become an expensive event, and you need a few thousand or hundred dollars for a professional wedding DJ. Therefore, the best DJ speakers for weddings are an integral part of a wedding.These speakers must be included in the wedding DJ cost as the groom and bride want to have the best sound system for their wedding. Everyone wants to hire experienced DJs for the home DJ setup to ensure the best arrangements for your wedding day. DJs will be responsible for bringing the top DJ speakers for weddings for high-quality sound.</h4>
+
+</body>
+</html>
+
+
+
+
+<!---sound-->
+		  
+	<!--bo0king-->	  
+		  
+      </div>
+  </section>
+
+  <section id="register" class="py-5 bg-light">
+      <div class="container">
+          <h2 class="text-center mb-3">Booking</h2>
+          <form id="registration-form">
+              <div class="form-group">
+                  <label for="fullName">Full Name</label>
+                  <input type="text" class="form-control" id="fullName"
+                  name="fullName" placeholder="Enter full name" required>
+              </div>
+              <div class="form-group">
+                  <label for="emailAddress">Email address</label>
+                  <input type="email" class="form-control" id="emailAddress"
+                  name="emailAddress" placeholder="Enter email" required>
+              </div>
+              <div class="form-group">
+                  <label for="ticketType"></label>
+                  <select class="form-control" id="ticketType" name="ticketType" required>
+                      <option value="">Type Of Wedding</option>
+                      <option value="general">Traditional</option>
+                      <option value="vip">Marathi</option>
+                      <option value="student">Destination</option>
+					  <option value="student">Christian</option>
+					  <option value="student">Any Other</option>
+
+
+                  </select>
+              </div>
+			  <div class="form-group">
+                  <label for="emailAddress">Expected Date Of Wedding</label>
+                  <input type="email" class="form-control" id="emailAddress"
+                  name="emailAddress" placeholder="Enter Date" required>
+              </div>
+			  <div class="form-group">
+                  <label for="ticketType"></label>
+                  <select class="form-control" id="ticketType" name="City" required>
+                      <option value="">city</option>
+                      <option value="general">mumbai</option>
+                      <option value="vip">Dehli</option>
+                      <option value="student">Pune</option>
+					  <option value="student">Nagpur</option>
+					  <option value="student">Rjasthan</option>
+					  <option value="student">Udaypur</option>
+					  <option value="student">kohlapur</option>
+
+
+					  <option value="student">Any Other</option>
+ </select>
+              </div>
+			  
+              <button type="submit" class="btn btn-primary">Submit Registration</button>
+          </form>
+      </div>
+  </section>
+  <!--location-->
+
+  <head>
+  <title>Location</title>
+  </head>
+  <body>
+          <h2>Location</h2>
+		  
+		  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8850.387291677114!2d79.08489340245286!3d21.14724511628902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c19e9d03fbab%3A0x9ac139273bfacffc!2sEternity%20Mall!5e0!3m2!1sen!2sin!4v1702781213615!5m2!1sen!2sin" width="1000" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		  </body>
+		  </html>
+		  
+		  
+		
+		  
+      </div>
+  </section>
+    <!--location-->
+
+</main>
+
+<footer class="bg-dark text-white text-center py-3">
+  <p>(c) Luxurious Event 2023. All Rights Reserved.</p>
+</footer>
+
